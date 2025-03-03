@@ -1,12 +1,8 @@
 <?php
 
-use App\Http\Controllers\BikeController;
+use App\Http\Controllers\HelloController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/hello', [HelloController::class, 'welcome']);
 
-Route::controller(BikeController::class)->group(function () {
-    Route::get('/bike', 'index');
-});
